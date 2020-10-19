@@ -2,10 +2,10 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=restapi_mysql_1;dbname=restapi',
     'username' => 'root',
-    'password' => '',
-    'charset' => 'utf8',
+    'password' => 'Mirolsli1',
+    'charset' => 'utf8mb4',
 
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,
