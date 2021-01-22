@@ -48,7 +48,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'api' => 'api/index'
+                'api' => 'api/index',
+                'nav' => 'nav/index'
             ],
         ],
     ],

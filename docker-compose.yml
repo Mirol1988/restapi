@@ -14,6 +14,8 @@ services:
     # nginx должен общаться с php контейнером
     links:
       - php
+    env_file:
+      - .env
   php:
     # у нас свой образ для PHP, указываем путь к нему и говорим что его надо собрать
     build: ./images/php
@@ -23,6 +25,8 @@ services:
     # монтируем директорию с проектами
     volumes:
       - ./www:/var/www
+    env_file:
+      - .env
   mysql:
     image: mariadb
     ports:
@@ -30,6 +34,8 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     # задаем пароль для root пользователя
+    env_file:
+      - .env
     environment:
       MYSQL_ROOT_PASSWORD: Mirolsli1
   pma:
@@ -40,8 +46,11 @@ services:
       - mysql:mysql
     ports:
       - 8183:80
-    environment:
-      # прописываем название нашего MySQL хоста
-      PMA_HOST: mysql
-      MYSQL_USERNAME: root
-      MYSQL_ROOT_PASSWORD: Mirolsli1
+    env_file:
+      - .env
+#    environment:
+#      # прописываем название нашего MySQL хоста
+#      PMA_HOST: mysql
+#      MYSQL_USERNAME: root
+#      MYSQL_ROOT_PASSWORD: Mirolsli1
+#
